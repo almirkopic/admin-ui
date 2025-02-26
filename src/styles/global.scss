@@ -1,5 +1,5 @@
-@import "./variables.scss";
-@import "./responsive.scss";
+@use "./variables" as *;
+@use "./responsive" as *;
 
 * {
   margin: 0;
