@@ -1,6 +1,7 @@
 import { DataGrid, GridColDef, GridToolbar } from "@mui/x-data-grid";
 import { Link } from "react-router-dom";
 import "./dataTable.scss";
+// import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 type Props = {
   columns: GridColDef[];
@@ -9,9 +10,23 @@ type Props = {
 };
 
 const DataTable = (props: Props) => {
+  // TEST THE API
+
+  // const queryClient = useQueryClient();
+  // // const mutation = useMutation({
+  // //   mutationFn: (id: number) => {
+  // //     return fetch(`http://localhost:8800/api/${props.slug}/${id}`, {
+  // //       method: "delete",
+  // //     });
+  // //   },
+  // //   onSuccess: ()=>{
+  // //     queryClient.invalidateQueries([`all${props.slug}`]);
+  // //   }
+  // // });
+
   const handleDelete = (id: number) => {
-    //delete item
-    //axios.delete(`api/${slug}/id`)
+    //delete the item
+    // mutation.mutate(id)
     console.log(id + "item has been deleted");
   };
 
@@ -23,16 +38,10 @@ const DataTable = (props: Props) => {
       return (
         <div className="action">
           <Link to={`/${props.slug}/${params.row.id}`}>
-            <img src="/view.svg" alt="View icon" />
+            <img src="/view.svg" alt="" />
           </Link>
-
-          <div
-            className="delete"
-            onDoubleClick={() => handleDelete(params.row.id)}
-          >
-            <Link>
-              <img src="/delete.svg" alt="Delete icon" />
-            </Link>
+          <div className="delete" onClick={() => handleDelete(params.row.id)}>
+            <img src="/delete.svg" alt="" />
           </div>
         </div>
       );
