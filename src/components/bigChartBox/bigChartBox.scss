@@ -1,3 +1,5 @@
+@use "../../styles/responsive" as *;
+
 .bigChartBox {
   width: 100%;
   height: 100%;
@@ -5,6 +7,11 @@
   flex-direction: column;
   justify-content: space-between;
 
+  h1 {
+    @include xxl {
+      font-size: 24px;
+    }
+  }
   .chart {
     width: 100%;
     height: 300px;

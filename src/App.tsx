@@ -19,13 +19,17 @@ const Layout = () => {
           <Menu />
         </div>
         <div className="contentContainer">
+          {/* <QueryClientProvider client={queryClient}> */}
           <Outlet />
+          {/* </QueryClientProvider> */}
         </div>
       </div>
       <Footer />
     </div>
   );
 };
+
+// const queryClient = new QueryClient();
 
 function App() {
   const router = createBrowserRouter([

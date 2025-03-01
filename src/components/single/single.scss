@@ -27,6 +27,16 @@
         h1 {
           font-weight: 500;
         }
+
+        button {
+          background-color: rgb(187, 11, 78);
+          padding: 0.3rem;
+          box-shadow: none;
+          border-radius: 3px;
+          border: none;
+          cursor: pointer;
+          color: whitesmoke;
+        }
       }
       .details {
         font-size: 18px;
